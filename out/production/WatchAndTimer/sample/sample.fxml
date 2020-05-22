@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="772.0" style="-fx-background-color: black;" stylesheets="@clock.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StopWatch">
+    <Label fx:id="Hour" layoutX="96.0" layoutY="57.0" text="00" textFill="WHITE">
+        <font>
+            <Font name="DigifaceWide Regular" size="99.0" />
+        </font>
+    </Label>
+    <Label fx:id="Minute" layoutX="264.0" layoutY="57.0" text="00" textFill="WHITE">
+        <font>
+            <Font name="DigifaceWide Regular" size="99.0" />
+        </font>
+    </Label>
+    <Label fx:id="Second" layoutX="430.0" layoutY="57.0" text="00" textFill="WHITE">
+        <font>
+            <Font name="DigifaceWide Regular" size="99.0" />
+        </font>
+    </Label>
+    <Label fx:id="MiniSecond" layoutX="601.0" layoutY="123.0" text="00" textFill="WHITE">
+        <font>
+            <Font name="DigifaceWide Regular" size="30.0" />
+        </font>
+    </Label>
+    <Label layoutX="244.0" layoutY="39.0" text="." textFill="WHITE">
+        <font>
+            <Font size="99.0" />
+        </font>
+    </Label>
+    <Label layoutX="244.0" text="." textFill="WHITE">
+        <font>
+            <Font size="99.0" />
+        </font>
+    </Label>
+    <Label layoutX="412.0" layoutY="38.0" text="." textFill="WHITE">
+        <font>
+            <Font size="99.0" />
+        </font>
+    </Label>
+    <Label layoutX="411.0" layoutY="1.0" text="." textFill="WHITE">
+        <font>
+            <Font size="99.0" />
+        </font>
+    </Label>
+    <Label layoutX="585.0" layoutY="118.0" text="." textFill="WHITE">
+        <font>
+            <Font size="33.0" />
+        </font>
+    </Label>
+    <Label layoutX="585.0" layoutY="107.0" text="." textFill="WHITE">
+        <font>
+            <Font size="33.0" />
+        </font>
+    </Label>
+    <Button fx:id="reset" alignment="CENTER" layoutX="215.0" layoutY="212.0" mnemonicParsing="false" onAction="#ResetStopWatch" prefHeight="40.0" prefWidth="40.0">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@reset.png" />
+            </image>
+         </ImageView>
+      </graphic>
+    </Button>
+    <Button fx:id="mark" alignment="CENTER" layoutX="484.0" layoutY="213.0" mnemonicParsing="false" onAction="#MarkStopWatch" prefHeight="40.0" prefWidth="40.0">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@icons8_flag_2_96px.png" />
+            </image>
+         </ImageView>
+      </graphic>
+    </Button>
+    <Button id="Home" layoutX="2.0" mnemonicParsing="false" onAction="#side_pane" prefHeight="49.0" prefWidth="64.0" style="-fx-border-color: transparent;">
+      <graphic>
+         <ImageView id="home" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@home.png" />
+            </image>
+         </ImageView>
+      </graphic></Button>
+    <AnchorPane fx:id="home_pane" focusTraversable="true" layoutX="-2.0" layoutY="-7.0" prefHeight="307.0" prefWidth="92.0" style="-fx-background-color: black;" visible="false">
+        <Button alignment="CENTER" graphicTextGap="10.0" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#side_pane" prefHeight="38.0" prefWidth="40.0" style="-fx-border-color: transparent;">
+            <font>
+                <Font name="Gisha Bold" size="14.0" />
+            </font>
+         <graphic>
+            <ImageView id="back" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+        </Button>
+        <Button layoutX="7.0" layoutY="92.0" mnemonicParsing="false" style="-fx-shape: null;" text="Stopwatch" />
+        <Button layoutX="7.0" layoutY="152.0" mnemonicParsing="false" onAction="#Timer" prefHeight="31.0" prefWidth="78.0" style="-fx-shape: null;" text="Timer" />
+        <Button fx:id="About" layoutX="7.0" layoutY="212.0" mnemonicParsing="false" onAction="#Timer" prefHeight="31.0" prefWidth="78.0" style="-fx-shape: null;" text="About" />
+    </AnchorPane>
+   <ProgressIndicator fx:id="progress" layoutX="325.0" layoutY="192.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="81.0" prefWidth="78.0" progress="0.0">
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <padding>
+         <Insets bottom="-15.0" />
+      </padding>
+   </ProgressIndicator>
+    <Button fx:id="start" alignment="CENTER" layoutX="331.8" layoutY="198.0" mnemonicParsing="false" onAction="#clickAction" prefHeight="65.0" prefWidth="65.0" style="-fx-border-color: transparent;">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+      <graphic>
+         <ImageView fx:id="PlayIcon" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@play.png" />
+            </image>
+         </ImageView>
+      </graphic>
+    </Button>
+   <TextArea fx:id="LapTimeShow" editable="false" layoutX="650.0" layoutY="35.0" prefHeight="265.0" prefWidth="122.0" wrapText="true">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font></TextArea>
+   <Label fx:id="LapLabel" layoutX="650.0" layoutY="2.0" prefHeight="31.0" prefWidth="122.0" text="Lap Time :" textFill="WHITE" visible="false">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Label>
+    <AnchorPane fx:id="visible_page" focusTraversable="true" layoutX="95.0" opacity="0.54" prefHeight="300.0" prefWidth="677.0" style="-fx-background-color: #009383;" visible="false" />
+</AnchorPane>

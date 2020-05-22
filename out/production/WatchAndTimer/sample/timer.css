@@ -1,0 +1,48 @@
+.root{
+-fx-background-color:black;
+}
+.button{
+ -fx-background-color:transparent;
+}
+.progress-indicator .progress{
+-fx-background-color:#009383;
+}
+.progress-indicator .percentage{
+-fx-fill:transparent;
+}
+.progress-indicator .tick{
+-fx-background-color:transparent;
+}
+#downButton{
+-fx-shape: "M 100, 100                 m -50, 0                 a 50,50 0 1,0 100,0                 a 50,50 0 1,0 -100,0";
+-fx-background-color:black;
+-fx-border-radius:50px;
+-fx-insert:0;
+-fx-border-color:white;
+-fx-border-width:1;
+}
+#downButton:pressed{
+-fx-background-color:gray;
+}
+#play{
+-fx-shape: "M 100, 100 m -50, 0 a 50,50 0 1,0 100,0 a 50,50 0 1,0 -100,0";
+-fx-background-color:black;
+}
+#play:pressed{
+-fx-background-color:gray;
+}
+.button:pressed{
+ -fx-background-color:gray;
+}
+.text-area{
+-fx-text-fill:white;
+-fx-background-color:black;
+}
+.text-area .content{
+     -fx-background-color:black;
+}
+.text-area .scroll-pane{
+-fx-background-color:black;
+-fx-hbar-policy:never;
+-fx-vbar-policy:never;
+}

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="772.0" stylesheets="@timer.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.CountDown">
+   <ProgressIndicator fx:id="progress" layoutX="307.0" layoutY="189.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="96.0" prefWidth="116.0" progress="0.0">
+      <padding>
+         <Insets bottom="-15.0" />
+      </padding>
+   </ProgressIndicator>
+   <Button id="play" fx:id="startTimer" layoutX="335.0" layoutY="205.0" mnemonicParsing="false" onAction="#clickAction" prefHeight="60.0" prefWidth="60.0">
+      <graphic>
+         <ImageView fx:id="PlayIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@play.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Label fx:id="dot2" alignment="CENTER" layoutX="451.0" layoutY="42.0" prefHeight="112.0" prefWidth="28.0" text=":" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="49.0" />
+      </font>
+   </Label>
+   <Label fx:id="dot1" alignment="CENTER" layoutX="263.0" layoutY="42.0" prefHeight="112.0" prefWidth="28.0" text=":" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="49.0" />
+      </font>
+   </Label>
+   <Label fx:id="Hours" alignment="CENTER" layoutX="120.0" layoutY="42.0" prefHeight="96.0" prefWidth="143.0" text="00" textFill="WHITE">
+      <font>
+         <Font name="DigifaceWide Regular" size="96.0" />
+      </font>
+   </Label>
+   <Label fx:id="Minutes" alignment="CENTER" layoutX="296.0" layoutY="42.0" text="00" textFill="WHITE">
+      <font>
+         <Font name="DigifaceWide Regular" size="96.0" />
+      </font>
+   </Label>
+   <Label fx:id="Seconds" alignment="CENTER" layoutX="479.0" layoutY="45.0" prefHeight="112.0" prefWidth="143.0" text="00" textFill="WHITE">
+      <font>
+         <Font name="DigifaceWide Regular" size="96.0" />
+      </font>
+   </Label>
+   <Button id="downButton" layoutX="215.0" layoutY="213.0" mnemonicParsing="false" onAction="#reset" prefHeight="40.0" prefWidth="40.0">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@reset.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="downButton" layoutX="477.0" layoutY="213.0" mnemonicParsing="false" onAction="#mark" prefHeight="40.0" prefWidth="40.0">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@icons8_flag_2_96px.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="H2D" layoutX="137.0" layoutY="154.0" mnemonicParsing="false" onAction="#changeHours">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@down.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="H2U" layoutX="136.0" layoutY="31.0" mnemonicParsing="false" onAction="#changeHours" prefHeight="28.0" prefWidth="36.0">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@up.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="H1D" layoutX="208.0" layoutY="151.0" mnemonicParsing="false" onAction="#changeHours">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@down.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="H1U" layoutX="207.0" layoutY="28.0" mnemonicParsing="false" onAction="#changeHours" prefHeight="28.0" prefWidth="36.0">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@up.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="M2D" layoutX="315.0" layoutY="156.0" mnemonicParsing="false" onAction="#changeMinutes">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@down.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="M2U" layoutX="314.0" layoutY="33.0" mnemonicParsing="false" onAction="#changeMinutes" prefHeight="28.0" prefWidth="36.0">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@up.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="M1D" layoutX="386.0" layoutY="153.0" mnemonicParsing="false" onAction="#changeMinutes">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@down.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="M1U" layoutX="385.0" layoutY="30.0" mnemonicParsing="false" onAction="#changeMinutes" prefHeight="28.0" prefWidth="36.0">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@up.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="S2D" layoutX="498.0" layoutY="156.0" mnemonicParsing="false" onAction="#changeSeconds">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@down.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="S2U" layoutX="497.0" layoutY="33.0" mnemonicParsing="false" onAction="#changeSeconds" prefHeight="28.0" prefWidth="36.0">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@up.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="S1D" layoutX="569.0" layoutY="153.0" mnemonicParsing="false" onAction="#changeSeconds">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@down.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="S1U" layoutX="568.0" layoutY="30.0" mnemonicParsing="false" onAction="#changeSeconds" prefHeight="28.0" prefWidth="36.0">
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@up.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button layoutX="-1.0" layoutY="-1.0" mnemonicParsing="false" onAction="#BackToStopWatch" prefHeight="40.0" prefWidth="40.0">
+      <graphic>
+         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@back.png" />
+         </ImageView>
+      </graphic>
+   </Button>
+   <TextArea fx:id="LapTimeShow" editable="false" layoutX="623.0" layoutY="47.0" prefHeight="253.0" prefWidth="151.0" visible="false">
+      <font>
+         <Font name="System Bold" size="20.0" />
+      </font></TextArea>
+   <Label fx:id="LapLabel" layoutX="613.0" prefHeight="47.0" prefWidth="161.0" text="Lap Time :" textFill="WHITE" visible="false">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Label>
+</AnchorPane>
